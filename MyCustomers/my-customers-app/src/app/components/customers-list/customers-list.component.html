@@ -1,0 +1,12 @@
+<p><i>Double click on a cell to edit the row</i></p>
+<ag-grid-angular
+    style="width: 100%; height: 350px;"
+    class="ag-theme-alpine"
+    [rowData]="customers$ | async"
+    [columnDefs]="colDefs"
+    editType="fullRow"
+    (rowValueChanged)="onRowValueChanged($event)"
+    (rowEditingStarted)="onRowEditingStarted($event)"
+    (rowEditingStopped)="rowEditingStopped($event)"
+    (gridReady)="onGridReady($event)"
+/>

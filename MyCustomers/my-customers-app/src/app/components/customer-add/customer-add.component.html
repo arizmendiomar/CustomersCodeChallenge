@@ -1,0 +1,20 @@
+<div class="container">
+  <h3>Create User</h3>
+
+  <form [formGroup]="createUserForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="firstName" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lastName" required>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" required>
+    </mat-form-field>
+    <button mat-button type="submit" [disabled]="createUserForm.invalid || saving()">{{ saving() ? "Saving" : "Save"}}</button>
+  </form>
+</div>
+
